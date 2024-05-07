@@ -9,6 +9,7 @@ library(jsonlite)
 option_list = list(
 
 make_option(c("--file_path"), action="store", default=NA, type="character", help="my description"), 
+make_option(c("--id"), action="store", default=NA, type="character", help="my description"), 
 make_option(c("--id"), action="store", default=NA, type="character", help="my description")
 
 )
@@ -17,6 +18,7 @@ make_option(c("--id"), action="store", default=NA, type="character", help="my de
 opt = parse_args(OptionParser(option_list=option_list))
 
 file_path <- gsub('"', '', opt$file_path)
+id <- gsub('"', '', opt$id)
 id <- gsub('"', '', opt$id)
 
 
