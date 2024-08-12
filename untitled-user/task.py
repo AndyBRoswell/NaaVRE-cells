@@ -8,7 +8,7 @@ arg_parser.add_argument('--id', action='store', type=str, required=True, dest='i
 
 arg_parser.add_argument('--names', action='store', type=str, required=True, dest='names')
 
-arg_parser.add_argument('--param_a', action='store', type=str, required=True, dest='param_a')
+arg_parser.add_argument('--param_p', action='store', type=str, required=True, dest='param_p')
 
 args = arg_parser.parse_args()
 print(args)
@@ -18,13 +18,13 @@ id = args.id
 import json
 names = json.loads(args.names)
 
-param_a = args.param_a
+param_p = args.param_p
 
 
 for name in names:
     print(f"Hello, {name}!")
 x = 1
-print(param_a)
+print(param_p)
 print(os.getenv('API_ENDPOINT'))
 
 import json
