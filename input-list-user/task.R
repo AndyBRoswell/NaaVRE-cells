@@ -4,6 +4,14 @@ setwd('/app')
 
 library(optparse)
 library(jsonlite)
+if (!requireNamespace("dplyr", quietly = TRUE)) {
+	install.packages("dplyr", repos="http://cran.us.r-project.org")
+}
+library(dplyr)
+if (!requireNamespace("stringr", quietly = TRUE)) {
+	install.packages("stringr", repos="http://cran.us.r-project.org")
+}
+library(stringr)
 
 
 option_list = list(
@@ -21,6 +29,7 @@ id <- gsub('"', '', opt$id)
 
 
 
+library(dplyr)
 names <- c('Alice', 'Bob')
 
 
