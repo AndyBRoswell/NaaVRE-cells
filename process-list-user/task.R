@@ -39,6 +39,7 @@ for (name in names) {
 }
 x <- 1
 print(param_p)
+
 print(stringr::str_interp('p = ${param_p}'))
 
 
