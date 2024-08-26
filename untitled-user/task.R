@@ -17,7 +17,8 @@ library(stringr)
 option_list = list(
 
 make_option(c("--id"), action="store", default=NA, type="character", help="my description"), 
-make_option(c("--x"), action="store", default=NA, type="integer", help="my description")
+make_option(c("--names"), action="store", default=NA, type="character", help="my description"), 
+make_option(c("--param_p"), action="store", default=NA, type="character", help="my description")
 
 )
 
@@ -25,13 +26,24 @@ make_option(c("--x"), action="store", default=NA, type="integer", help="my descr
 opt = parse_args(OptionParser(option_list=option_list))
 
 id <- gsub('"', '', opt$id)
-x = opt$x
+names = fromJSON(opt$names)
+
+param_p = opt$param_p
 
 
 
 
+library(stringr)
+for (name in names) {
+  print(paste0('Hello, ', name))
+}
+x <- 1
+print(param_p)
+print(stringr::str_interp('p = ${param_p}'))
 
-print(x)
 
 
-
+# capturing outputs
+file <- file(paste0('/tmp/x_', id, '.json'))
+writeLines(toJSON(x, auto_unbox=TRUE), file)
+close(file)
