@@ -16,7 +16,8 @@ library(stringr)
 
 option_list = list(
 
-make_option(c("--id"), action="store", default=NA, type="character", help="my description")
+make_option(c("--id"), action="store", default=NA, type="character", help="my description"), 
+make_option(c("--x"), action="store", default=NA, type="integer", help="my description")
 
 )
 
@@ -24,12 +25,13 @@ make_option(c("--id"), action="store", default=NA, type="character", help="my de
 opt = parse_args(OptionParser(option_list=option_list))
 
 id <- gsub('"', '', opt$id)
+x = opt$x
 
 
 
 
 
-param_p <- 'abc'
+print(x)
 
 
 
