@@ -4,14 +4,26 @@ setwd('/app')
 
 library(optparse)
 library(jsonlite)
+if (!requireNamespace("knitr", quietly = TRUE)) {
+	install.packages("knitr", repos="http://cran.us.r-project.org")
+}
+library(knitr)
+if (!requireNamespace("magrittr", quietly = TRUE)) {
+	install.packages("magrittr", repos="http://cran.us.r-project.org")
+}
+library(magrittr)
+if (!requireNamespace("remotes", quietly = TRUE)) {
+	install.packages("remotes", repos="http://cran.us.r-project.org")
+}
+library(remotes)
+if (!requireNamespace("parsermd", quietly = TRUE)) {
+	install.packages("parsermd", repos="http://cran.us.r-project.org")
+}
+library(parsermd)
 if (!requireNamespace("dplyr", quietly = TRUE)) {
 	install.packages("dplyr", repos="http://cran.us.r-project.org")
 }
 library(dplyr)
-if (!requireNamespace("stringr", quietly = TRUE)) {
-	install.packages("stringr", repos="http://cran.us.r-project.org")
-}
-library(stringr)
 
 
 option_list = list(
@@ -29,7 +41,12 @@ id <- gsub('"', '', opt$id)
 
 
 
-param_p <- 'abc'
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+library(magrittr)
 
 
 
