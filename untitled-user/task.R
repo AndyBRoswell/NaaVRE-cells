@@ -4,26 +4,14 @@ setwd('/app')
 
 library(optparse)
 library(jsonlite)
-if (!requireNamespace("knitr", quietly = TRUE)) {
-	install.packages("knitr", repos="http://cran.us.r-project.org")
+if (!requireNamespace("ggplot2", quietly = TRUE)) {
+	install.packages("ggplot2", repos="http://cran.us.r-project.org")
 }
-library(knitr)
-if (!requireNamespace("magrittr", quietly = TRUE)) {
-	install.packages("magrittr", repos="http://cran.us.r-project.org")
+library(ggplot2)
+if (!requireNamespace("tidyverse", quietly = TRUE)) {
+	install.packages("tidyverse", repos="http://cran.us.r-project.org")
 }
-library(magrittr)
-if (!requireNamespace("remotes", quietly = TRUE)) {
-	install.packages("remotes", repos="http://cran.us.r-project.org")
-}
-library(remotes)
-if (!requireNamespace("parsermd", quietly = TRUE)) {
-	install.packages("parsermd", repos="http://cran.us.r-project.org")
-}
-library(parsermd)
-if (!requireNamespace("dplyr", quietly = TRUE)) {
-	install.packages("dplyr", repos="http://cran.us.r-project.org")
-}
-library(dplyr)
+library(tidyverse)
 
 
 option_list = list(
@@ -41,12 +29,8 @@ id <- gsub('"', '', opt$id)
 
 
 
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-
-library(magrittr)
+library(tidyverse)
+library(ggplot2)
 
 
 
