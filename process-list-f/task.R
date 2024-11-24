@@ -9,7 +9,7 @@ library(jsonlite)
 option_list = list(
 
 make_option(c("--id"), action="store", default=NA, type="character", help="my description"), 
-make_option(c("--names"), action="store", default=NA, type="character", help="my description")
+make_option(c("--names"), action="store", default=NA, type="integer", help="my description")
 
 )
 
@@ -17,7 +17,7 @@ make_option(c("--names"), action="store", default=NA, type="character", help="my
 opt = parse_args(OptionParser(option_list=option_list))
 
 id <- gsub('"', '', opt$id)
-names = fromJSON(opt$names)
+names = opt$names
 
 
 
