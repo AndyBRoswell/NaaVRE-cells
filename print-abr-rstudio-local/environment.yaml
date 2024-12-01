@@ -8,6 +8,7 @@ dependencies:
   - pip
   - python>=3.8
   - dplyr
-  - stats
+  - stringr
+  - readr
   - papermill
   - ipykernel
