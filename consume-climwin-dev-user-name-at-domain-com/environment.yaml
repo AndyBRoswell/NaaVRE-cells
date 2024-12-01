@@ -1,10 +1,12 @@
 name: venv
 channels:
   - conda-forge
+  - r
+  - defaults
 dependencies:
   - pip
   - python>=3.8
-  - climwin
   - zoo
+  - climwin
   - papermill
   - ipykernel
