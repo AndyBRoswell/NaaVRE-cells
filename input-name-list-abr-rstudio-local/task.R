@@ -8,10 +8,14 @@ if (!requireNamespace("dplyr", quietly = TRUE)) {
 	install.packages("dplyr", repos="http://cran.us.r-project.org")
 }
 library(dplyr)
-if (!requireNamespace("stats", quietly = TRUE)) {
-	install.packages("stats", repos="http://cran.us.r-project.org")
+if (!requireNamespace("readr", quietly = TRUE)) {
+	install.packages("readr", repos="http://cran.us.r-project.org")
 }
-library(stats)
+library(readr)
+if (!requireNamespace("stringr", quietly = TRUE)) {
+	install.packages("stringr", repos="http://cran.us.r-project.org")
+}
+library(stringr)
 
 
 option_list = list(
