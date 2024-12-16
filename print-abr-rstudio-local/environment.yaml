@@ -7,8 +7,8 @@ channels:
 dependencies:
   - pip
   - python>=3.8
+  - r-readr
   - r-stringr
   - r-dplyr
-  - r-readr
   - papermill
   - ipykernel
