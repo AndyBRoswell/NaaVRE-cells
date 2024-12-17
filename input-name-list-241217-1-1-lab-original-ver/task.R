@@ -20,7 +20,7 @@ print('option_list')
 option_list = list(
 
 make_option(c("--id"), action="store", default=NA, type="character", help="my description"), 
-make_option(c("--w"), action="store", default=NA, type="character", help="my description")
+make_option(c("--w"), action="store", default=NA, type="integer", help="my description")
 )
 
 
