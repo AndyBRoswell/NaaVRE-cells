@@ -22,8 +22,8 @@ option_list = list(
 make_option(c("--id"), action="store", default=NA, type="character", help="my description"), 
 make_option(c("--names"), action="store", default=NA, type="character", help="my description"), 
 make_option(c("--param_p"), action="store", default=NA, type="character", help="my description"), 
-make_option(c("--x"), action="store", default=NA, type="character", help="my description"), 
-make_option(c("--y"), action="store", default=NA, type="character", help="my description")
+make_option(c("--x"), action="store", default=NA, type="integer", help="my description"), 
+make_option(c("--y"), action="store", default=NA, type="integer", help="my description")
 )
 
 
@@ -71,14 +71,18 @@ print(var)
 var_len = length(var)
 print(paste("Variable names has length", var_len))
 
-names = opt$names
+print("------------------------Running var_serialization for names-----------------------")
+print(opt$names)
+names = var_serialization(opt$names)
+print("---------------------------------------------------------------------------------")
+
 print("Retrieving param_p")
 var = opt$param_p
 print(var)
 var_len = length(var)
 print(paste("Variable param_p has length", var_len))
 
-param_p = opt$param_p
+param_p <- gsub("\"", "", opt$param_p)
 print("Retrieving x")
 var = opt$x
 print(var)
