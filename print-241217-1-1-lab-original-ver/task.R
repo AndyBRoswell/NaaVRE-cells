@@ -21,7 +21,7 @@ option_list = list(
 
 make_option(c("--id"), action="store", default=NA, type="character", help="my description"), 
 make_option(c("--param_a"), action="store", default=NA, type="character", help="my description"), 
-make_option(c("--t"), action="store", default=NA, type="character", help="my description")
+make_option(c("--t"), action="store", default=NA, type="integer", help="my description")
 )
 
 
@@ -69,7 +69,7 @@ print(var)
 var_len = length(var)
 print(paste("Variable param_a has length", var_len))
 
-param_a = opt$param_a
+param_a <- gsub("\"", "", opt$param_a)
 print("Retrieving t")
 var = opt$t
 print(var)
