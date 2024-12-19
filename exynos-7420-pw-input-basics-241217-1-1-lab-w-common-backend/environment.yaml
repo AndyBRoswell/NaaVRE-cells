@@ -1,0 +1,14 @@
+name: venv
+channels:
+  - conda-forge
+  - r
+  - bioconda
+  - defaults
+dependencies:
+  - pip
+  - python>=3.8
+  - r-ggplot2
+  - r-jsonlite
+  - r-foreach
+  - papermill
+  - ipykernel
