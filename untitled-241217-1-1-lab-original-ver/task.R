@@ -27,7 +27,6 @@ library(tidyr)
 print('option_list')
 option_list = list(
 
-make_option(c("--basic"), action="store", default=NA, type="character", help="my description"), 
 make_option(c("--id"), action="store", default=NA, type="character", help="my description")
 )
 
@@ -63,17 +62,6 @@ var_serialization <- function(var){
     )
 }
 
-print("Retrieving basic")
-var = opt$basic
-print(var)
-var_len = length(var)
-print(paste("Variable basic has length", var_len))
-
-print("------------------------Running var_serialization for basic-----------------------")
-print(opt$basic)
-basic = var_serialization(opt$basic)
-print("---------------------------------------------------------------------------------")
-
 print("Retrieving id")
 var = opt$id
 print(var)
@@ -84,4 +72,21 @@ id <- gsub("\"", "", opt$id)
 
 
 print("Running the cell")
-print(basic)
+param_seed <- 0
+examples <- 10
+min_dB <- 0
+max_dB <- 150
+param_digits <- 1
+# capturing outputs
+print('Serialization of examples')
+file <- file(paste0('/tmp/examples_', id, '.json'))
+writeLines(toJSON(examples, auto_unbox=TRUE), file)
+close(file)
+print('Serialization of min_dB')
+file <- file(paste0('/tmp/min_dB_', id, '.json'))
+writeLines(toJSON(min_dB, auto_unbox=TRUE), file)
+close(file)
+print('Serialization of max_dB')
+file <- file(paste0('/tmp/max_dB_', id, '.json'))
+writeLines(toJSON(max_dB, auto_unbox=TRUE), file)
+close(file)
