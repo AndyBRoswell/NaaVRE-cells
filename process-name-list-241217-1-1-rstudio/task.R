@@ -22,7 +22,7 @@ option_list = list(
 
 make_option(c("--id"), action="store", default=NA, type="character", help="my description"), 
 make_option(c("--names"), action="store", default=NA, type="character", help="my description"), 
-make_option(c("--param_p"), action="store", default=NA, type="integer", help="my description"), 
+make_option(c("--param_p"), action="store", default=NA, type="character", help="my description"), 
 make_option(c("--x"), action="store", default=NA, type="integer", help="my description"), 
 make_option(c("--y"), action="store", default=NA, type="integer", help="my description")
 
