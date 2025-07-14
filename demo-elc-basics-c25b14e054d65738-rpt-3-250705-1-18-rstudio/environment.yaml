@@ -1,0 +1,16 @@
+name: venv
+channels:
+  - conda-forge
+  - r
+  - bioconda
+  - defaults
+dependencies:
+  - pip
+  - python>=3.8
+  - r-tidyr
+  - r-stringr
+  - r-scales
+  - r-ggplot2
+  - r-readr
+  - papermill
+  - ipykernel
