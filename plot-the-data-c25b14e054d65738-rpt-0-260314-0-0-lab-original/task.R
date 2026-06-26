@@ -12,9 +12,9 @@ print('option_list')
 option_list = list(
 
 make_option(c("--id"), action="store", default=NA, type="character", help="my description"), 
-make_option(c("--x"), action="store", default=NA, type="integer", help="my description"), 
+make_option(c("--x"), action="store", default=NA, type="character", help="my description"), 
 make_option(c("--x_values"), action="store", default=NA, type="character", help="my description"), 
-make_option(c("--y"), action="store", default=NA, type="integer", help="my description"), 
+make_option(c("--y"), action="store", default=NA, type="character", help="my description"), 
 make_option(c("--y_values"), action="store", default=NA, type="character", help="my description")
 )
 
@@ -63,7 +63,11 @@ print(var)
 var_len = length(var)
 print(paste("Variable x has length", var_len))
 
-x = opt$x
+print("------------------------Running var_serialization for x-----------------------")
+print(opt$x)
+x = var_serialization(opt$x)
+print("---------------------------------------------------------------------------------")
+
 print("Retrieving x_values")
 var = opt$x_values
 print(var)
@@ -81,7 +85,11 @@ print(var)
 var_len = length(var)
 print(paste("Variable y has length", var_len))
 
-y = opt$y
+print("------------------------Running var_serialization for y-----------------------")
+print(opt$y)
+y = var_serialization(opt$y)
+print("---------------------------------------------------------------------------------")
+
 print("Retrieving y_values")
 var = opt$y_values
 print(var)
