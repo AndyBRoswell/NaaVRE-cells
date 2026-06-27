@@ -3,6 +3,8 @@ COPY --chown=$MAMBA_USER:$MAMBA_USER environment.yaml .
 RUN micromamba install -y -n venv -f environment.yaml
 ARG MAMBA_DOCKERFILE_ACTIVATE=1
 USER root
+RUN conda list -p /opt/conda/envs/venv && \
+    /opt/conda/envs/venv/bin/python -m pip check
 RUN conda-pack -p /opt/conda/envs/venv -o /tmp/env.tar && \
     mkdir /venv && cd /venv && tar xf /tmp/env.tar && \
     rm /tmp/env.tar
