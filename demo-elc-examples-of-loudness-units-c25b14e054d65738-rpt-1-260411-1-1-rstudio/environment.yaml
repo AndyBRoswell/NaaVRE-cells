@@ -5,10 +5,10 @@ dependencies:
   - pip
   - python>=3.8
   - nbconvert
-  - r-ggplot2
-  - r-scales
   - r-readr
-  - r-tidyr
+  - r-scales
+  - r-ggplot2
   - r-stringr
+  - r-tidyr
   - papermill
   - ipykernel
