@@ -24,8 +24,7 @@ lines = fromJSON(opt$lines)
 
 
 count = 0
-for (l in lines) {
-  count = count + 1
+for (l in lines) {  count = count + 1
   print(paste0('Line', trimws(l)))
 }
 
