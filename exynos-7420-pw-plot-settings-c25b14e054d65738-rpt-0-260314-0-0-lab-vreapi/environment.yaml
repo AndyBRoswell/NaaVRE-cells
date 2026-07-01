@@ -6,7 +6,7 @@ dependencies:
   - python>=3.8
   - nbconvert
   - r-ggplot2
-  - r-jsonlite
   - r-foreach
+  - r-jsonlite
   - papermill
   - ipykernel
